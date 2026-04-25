@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus - Full Stack Project Manager</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-theme="dark">
+  <button class="icon-btn mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+  <div class="toast-wrap" id="toastWrap"></div>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="mark">N</div><div><h1>Nexus</h1><p>FULL STACK PM</p></div></div>
+      <div class="search"><input id="globalSearch" type="search" placeholder="Search tasks in database..."></div>
+      <nav class="nav">
+        <div class="nav-label">Navigation</div>
+        <button class="nav-item active" data-page="dashboard">Dashboard</button>
+        <button class="nav-item" data-page="projects">Projects</button>
+        <button class="nav-item" data-page="board">Task Board</button>
+        <button class="nav-item" data-page="team">Team</button>
+        <button class="nav-item" data-page="timeline">Timeline</button>
+        <div class="nav-label">Projects</div>
+        <div id="projectNav"></div>
+      </nav>
+      <div class="footer">
+        <div class="avatar" style="background:linear-gradient(135deg,var(--accent),var(--accent2))">AJ</div>
+        <div style="min-width:0;flex:1"><strong id="currentUserName" style="display:block;font-size:12px">Signed out</strong><span id="currentUserEmail" style="display:block;color:var(--dim);font-size:11px">Authentication required</span></div>
+        <button class="icon-btn" id="themeBtn" title="Toggle theme">◐</button>
+        <button class="icon-btn" id="notifBtn" title="Notifications" style="position:relative">⌁<span id="notifBadge" class="count" style="position:absolute;top:-7px;right:-7px"></span></button>
+        <button class="icon-btn" id="logoutBtn" title="Logout">out</button>
+      </div>
+    </aside>
+    <main class="main" id="main"></main>
+  </div>
+  <section class="drawer" id="drawer"><div class="panel-head"><div><h3 id="drawerTitle"></h3><p id="drawerSub" style="color:var(--dim);font-size:12px;margin-top:3px"></p></div><button class="icon-btn" id="drawerClose">×</button></div><div class="panel-body" id="drawerBody"></div></section>
+  <section class="notifications" id="notifications"><div class="panel-head"><h3>Notifications</h3><div class="actions"><button class="btn secondary" id="markReadBtn">Mark read</button><button class="icon-btn" id="notifClose">×</button></div></div><div class="panel-body" id="notifBody"></div></section>
+  <section class="modal" id="modal"><div class="modal-card" id="modalCard"></div></section>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
